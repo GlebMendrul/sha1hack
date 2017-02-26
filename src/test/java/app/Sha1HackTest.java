@@ -22,13 +22,11 @@ public class Sha1HackTest {
         testSha1("one string".getBytes(), "another string".getBytes());
         testSha1("same strings".getBytes(), "same strings".getBytes());
 
-
-        // fail
         byte[] pdf1 = readBytes("shattered-1.pdf");
         byte[] pdf2 = readBytes("shattered-2.pdf");
 
-        System.out.println("are pdfs the same? " + Arrays.equals(pdf1, pdf2));
-        testSha1(pdf1, pdf2);
+        System.out.println("are pdfs the same? " + Arrays.equals(pdf1, pdf2)); // false
+        testSha1(pdf1, pdf2); // fails, because hash is the same (38762cf7f55934b34d179ae6a4c80cadccbb7f0a)
     }
 
 
